@@ -1,1 +1,1 @@
-vim.g.leader = " "
+vim.g.mapleader = " "
