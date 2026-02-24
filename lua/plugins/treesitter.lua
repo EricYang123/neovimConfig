@@ -3,6 +3,6 @@ return {
   lazy = false,
   build = ':TSUpdate',
   config = function()
-    require'nvim-treesitter'.install {'cpp'}
+    require'nvim-treesitter'.install {'cpp', 'rust'}
   end,
 }

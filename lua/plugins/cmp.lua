@@ -15,7 +15,8 @@ return {
 	    cmp.setup({
 		snippet = {
 		    expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body)
+			-- vim.fn["vsnip#anonymous"](args.body)
+			vim.snippet.expand(args.body)
 		    end,
 		},
 		mapping = cmp.mapping.preset.insert({
@@ -54,6 +55,7 @@ return {
 
 	    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 	    vim.lsp.config("clangd", {capabilities = capabilities })
+	    vim.lsp.config("rust_analyzer", {capabilities = capabilities })
 	end,
     },
 }
