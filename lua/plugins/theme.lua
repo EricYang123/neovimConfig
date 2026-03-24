@@ -8,14 +8,14 @@ return {
 	-- end,
 	--    },
 
-	{
-	    "EdenEast/nightfox.nvim",
-	    lazy = false,
-	    priority = 1000,
-	    config = function()
-		vim.cmd("colorscheme carbonfox")
-	    end,
-	},
+	-- {
+	--     "EdenEast/nightfox.nvim",
+	--     lazy = false,
+	--     priority = 1000,
+	--     config = function()
+	-- 	vim.cmd("colorscheme carbonfox")
+	--     end,
+	-- },
 
 	-- {
 	--     "navarasu/onedark.nvim",
@@ -28,11 +28,11 @@ return {
 	--     end,
 	-- },
 
-	-- {
-	--     "olimorris/onedarkpro.nvim",
-	--     priority = 1000,
-	--     config = function()
-	-- 	vim.cmd("colorscheme onedark_dark")
-	--     end,
-	-- },
+	{
+	    "olimorris/onedarkpro.nvim",
+	    priority = 1000,
+	    config = function()
+		vim.cmd("colorscheme onedark_dark")
+	    end,
+	},
 }
