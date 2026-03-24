@@ -3,7 +3,7 @@ return {
 	'akinsho/toggleterm.nvim', 
 	config = function()
 	    require("toggleterm").setup{
-		direction = "vertical",
+		direction = "float",
 		open_mapping = [[<c-\>]],
 		size = function(term)
 		    if term.direction == "horizontal" then
