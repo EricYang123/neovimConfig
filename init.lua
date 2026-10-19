@@ -29,7 +29,15 @@ require("nvim-autopairs").setup{}
 vim.pack.add({
     'https://github.com/nvim-treesitter/nvim-treesitter'
 })
-require'nvim-treesitter'.install{'cpp', 'c'}
+require'nvim-treesitter'.install{'cpp', 'c', 'xml'}
+
+-- Indent Blank Line
+vim.pack.add({
+    'https://github.com/lukas-reineke/indent-blankline.nvim'
+})
+require("ibl").setup({
+    scope = { enabled = true },
+})
 
 -- lualine
 vim.pack.add({
@@ -154,11 +162,12 @@ vim.pack.add({
 })
 require("todo-comments").setup({})
 
+
 -- Opencode
 vim.pack.add({
   {
     src = "https://github.com/nickjvandyke/opencode.nvim",
-    version = vim.version.range("*"), -- Latest stable release
+    -- version = vim.version.range("*"), -- Latest stable release
   },
 })
 
@@ -170,7 +179,5 @@ vim.g.opencode_opts = {
 -- Recommended/example keymaps
 vim.keymap.set({ "n", "x" }, "<C-a>",   function() require("opencode").ask("@this: ") end,                    { desc = "Ask OpenCode…" })
 vim.keymap.set({ "n", "x" }, "<C-x>",   function() require("opencode").select() end,                          { desc = "Select OpenCode…" })
-vim.keymap.set({ "n", "x" }, "go",      function() return require("opencode").operator("@this ") end,         { desc = "Append range to OpenCode", expr = true })
-vim.keymap.set({ "n" },      "goo",     function() return require("opencode").operator("@this ") .. "_" end,  { desc = "Append line to OpenCode", expr = true })
-vim.keymap.set({ "n" },      "<S-C-u>", function() require("opencode").command("session.half.page.up") end,   { desc = "Scroll OpenCode up" })
-vim.keymap.set({ "n" },      "<S-C-d>", function() require("opencode").command("session.half.page.down") end, { desc = "Scroll OpenCode down" })
+vim.keymap.set({ "n", "x" }, "go",      function() return require("opencode").operator("@this") end,         { desc = "Send range to OpenCode", expr = true })
+vim.keymap.set({ "n" },      "goo",     function() return require("opencode").operator("@this") .. "_" end,  { desc = "Send line to OpenCode", expr = true })
